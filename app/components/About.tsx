@@ -17,7 +17,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative py-40 w-full flex flex-col items-center justify-center bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950 overflow-hidden"
+      className="relative py-32 w-full flex flex-col items-center justify-center bg-black overflow-hidden"
     >
       {/* Section background overlays */}
       <div className="absolute inset-0 pointer-events-none z-0">
@@ -51,9 +51,9 @@ export default function About() {
               transition: { duration: 0.5, ease: "easeOut" },
             },
           }}
-          className="text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-zinc-100 via-zinc-400 to-zinc-100 bg-clip-text text-transparent tracking-tight drop-shadow-xl"
+          className="text-3xl md:text-4xl font-bold mb-7 bg-gradient-to-r from-zinc-100 via-zinc-400 to-zinc-100 bg-clip-text text-transparent tracking-tight drop-shadow-xl"
         >
-          About Me
+          My Story
         </motion.h2>
         <motion.p
           variants={{
@@ -64,11 +64,14 @@ export default function About() {
               transition: { duration: 0.5, ease: "easeOut" },
             },
           }}
-          className="text-zinc-300 text-lg md:text-xl mb-12 leading-relaxed"
+          className="text-zinc-300 text-lg md:text-xl mb-10 leading-relaxed max-w-2xl mx-auto"
         >
-          I’m Gourab Adhikari, a passionate developer crafting modern web
-          experiences with a focus on performance, accessibility, and design. I
-          love building products that delight users and solve real problems.
+          Hi, I’m Gourab. I love building things for the web—especially
+          experiences that feel fast, beautiful, and personal. My journey
+          started with curiosity and a drive to create, and I’ve grown into a
+          developer who cares deeply about craft, clarity, and the people who
+          use my work. Every project is a chance to learn, connect, and make
+          something meaningful.
         </motion.p>
         <motion.div
           className="flex flex-wrap justify-center gap-4"

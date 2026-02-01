@@ -4,24 +4,28 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const projects = [
   {
-    title: "Modern Portfolio",
-    description:
-      "A sleek, animated portfolio built with Next.js, Framer Motion, and Tailwind.",
+    title: "Personal Portfolio",
+    problem:
+      "How can I showcase my work and story in a way that feels truly me?",
+    solution:
+      "Designed and built this site from scratch to reflect my personality and skills.",
     tech: ["Next.js", "Framer Motion", "TailwindCSS"],
     github: "https://github.com/GourabAdhikari/new-portfolio",
     live: "#",
   },
   {
     title: "Realtime Chat App",
-    description: "A fullstack chat app with live messaging and notifications.",
+    problem: "How to make chatting with friends instant and fun?",
+    solution: "Built a real-time chat app with websockets and notifications.",
     tech: ["React", "Node.js", "Socket.io", "MongoDB"],
     github: "https://github.com/GourabAdhikari/realtime-chat",
     live: "#",
   },
   {
     title: "E-commerce Platform",
-    description:
-      "A scalable e-commerce platform with modern UI and secure payments.",
+    problem: "How can a local business sell online with ease?",
+    solution:
+      "Developed a custom e-commerce platform focused on usability and speed.",
     tech: ["Next.js", "Stripe", "PostgreSQL", "Prisma"],
     github: "https://github.com/GourabAdhikari/ecommerce-platform",
     live: "#",
@@ -32,7 +36,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative py-40 w-full flex flex-col items-center bg-gradient-to-br from-zinc-900 via-zinc-950 to-zinc-900 overflow-hidden"
+      className="relative py-32 w-full flex flex-col items-center bg-black overflow-hidden"
     >
       {/* Section background overlays */}
       <div className="absolute inset-0 pointer-events-none z-0">
@@ -90,10 +94,17 @@ export default function Projects() {
             <h3 className="text-xl font-semibold text-zinc-100 mb-1 tracking-tight drop-shadow">
               {project.title}
             </h3>
-            <p className="text-zinc-400 mb-3 flex-1 leading-relaxed">
-              {project.description}
-            </p>
-            <div className="flex flex-wrap gap-2 mb-4">
+            <div className="mb-2">
+              <p className="text-zinc-400 text-sm mb-1">
+                <span className="font-medium text-zinc-300">Problem:</span>{" "}
+                {project.problem}
+              </p>
+              <p className="text-zinc-400 text-sm">
+                <span className="font-medium text-zinc-300">What I built:</span>{" "}
+                {project.solution}
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2 mb-3">
               {project.tech.map((tech) => (
                 <span
                   key={tech}

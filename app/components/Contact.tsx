@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from "react-icons/fa";
 
 const email = "gourab.adhikari@email.com";
+const mainEmail = "gourabadhikari24@gmail.com";
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
@@ -17,7 +18,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-40 w-full flex flex-col items-center bg-gradient-to-br from-zinc-900 via-zinc-950 to-zinc-900 overflow-hidden"
+      className="relative py-28 w-full flex flex-col items-center bg-black overflow-hidden"
     >
       {/* Section background noise/gradient overlays */}
       <div className="absolute inset-0 pointer-events-none z-0">
@@ -36,164 +37,63 @@ export default function Contact() {
             transition: { duration: 0.9, ease: "easeOut" },
           },
         }}
-        className="relative z-10 text-3xl md:text-4xl font-bold mb-16 bg-gradient-to-r from-zinc-100 via-zinc-400 to-zinc-100 bg-clip-text text-transparent text-center tracking-tight drop-shadow-xl"
+        className="relative z-10 text-3xl md:text-4xl font-bold mb-7 bg-gradient-to-r from-zinc-100 via-zinc-400 to-zinc-100 bg-clip-text text-transparent text-center tracking-tight drop-shadow-xl"
       >
-        Contact
+        Let’s Connect
       </motion.h2>
-      <motion.form
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.4 }}
-        variants={{
-          hidden: {},
-          visible: {
-            transition: {
-              staggerChildren: 0.08,
-            },
-          },
-        }}
-        className="relative z-10 w-full max-w-xl mx-auto bg-zinc-900/90 border border-zinc-800 rounded-3xl p-12 flex flex-col gap-8 shadow-2xl mb-16 backdrop-blur-xl before:absolute before:inset-0 before:rounded-3xl before:bg-gradient-to-br before:from-indigo-800/10 before:to-fuchsia-800/10 before:blur-xl before:-z-10"
+      <motion.p
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.7 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="relative z-10 text-lg md:text-xl text-zinc-300 text-center mb-5 font-medium max-w-xl mx-auto"
       >
-        <motion.input
-          type="text"
-          placeholder="Name"
-          variants={{
-            hidden: { opacity: 0, y: 32 },
-            visible: {
-              opacity: 1,
-              y: 0,
-              transition: { duration: 0.5, ease: "easeOut" },
-            },
-          }}
-          className="bg-zinc-800/80 text-zinc-200 rounded-lg px-5 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-600/70 border border-zinc-700/60 shadow-inner"
-        />
-        <motion.input
-          type="email"
-          placeholder="Email"
-          variants={{
-            hidden: { opacity: 0, y: 32 },
-            visible: {
-              opacity: 1,
-              y: 0,
-              transition: { duration: 0.5, ease: "easeOut" },
-            },
-          }}
-          className="bg-zinc-800/80 text-zinc-200 rounded-lg px-5 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-600/70 border border-zinc-700/60 shadow-inner"
-        />
-        <motion.textarea
-          placeholder="Message"
-          rows={4}
-          variants={{
-            hidden: { opacity: 0, y: 32 },
-            visible: {
-              opacity: 1,
-              y: 0,
-              transition: { duration: 0.5, ease: "easeOut" },
-            },
-          }}
-          className="bg-zinc-800/80 text-zinc-200 rounded-lg px-5 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-600/70 border border-zinc-700/60 shadow-inner"
-        />
-        <motion.button
-          type="submit"
-          variants={{
-            hidden: { opacity: 0, y: 32 },
-            visible: {
-              opacity: 1,
-              y: 0,
-              transition: { duration: 0.5, ease: "easeOut" },
-            },
-          }}
-          className="bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-indigo-500 hover:from-indigo-500 hover:to-fuchsia-500 text-white font-semibold py-3 rounded-lg transition-all shadow-lg shadow-indigo-900/30"
+        I’d love to hear from you—whether you want to talk code, design, or just
+        say hi. My inbox is always open.
+      </motion.p>
+      <div className="relative z-10 flex flex-col items-center gap-4 mb-8">
+        <div className="flex items-center gap-3">
+          <a
+            href={`mailto:${email}`}
+            className="text-indigo-300 hover:text-fuchsia-400 font-semibold text-lg transition-colors underline underline-offset-2"
+          >
+            {email}
+          </a>
+          <button
+            onClick={handleCopy}
+            className="ml-1 px-2 py-1 rounded-md bg-zinc-800 hover:bg-zinc-700 text-indigo-300 hover:text-fuchsia-300 transition-colors text-base font-medium focus:outline-none border border-zinc-700"
+            title="Copy email"
+          >
+            {copied ? "Copied!" : "Copy"}
+          </button>
+        </div>
+        <a
+          href={`mailto:${mainEmail}`}
+          className="mt-2 px-5 py-2 rounded-lg bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-indigo-500 hover:from-indigo-500 hover:to-fuchsia-500 text-white font-semibold text-base shadow-lg shadow-indigo-900/30 transition-all focus:outline-none border border-zinc-700"
         >
-          Send Message
-        </motion.button>
-      </motion.form>
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={{
-          hidden: {},
-          visible: {
-            transition: {
-              staggerChildren: 0.08,
-            },
-          },
-        }}
-        className="relative z-10 flex gap-8 mb-8"
-      >
-        <motion.a
-          href="https://github.com/GourabAdhikari"
-          target="_blank"
-          rel="noopener noreferrer"
-          variants={{
-            hidden: { opacity: 0, y: 32 },
-            visible: {
-              opacity: 1,
-              y: 0,
-              transition: { duration: 0.5, ease: "easeOut" },
-            },
-          }}
-          className="text-zinc-300 hover:text-indigo-400 transition-colors text-3xl drop-shadow-lg"
-        >
-          <FaGithub />
-        </motion.a>
-        <motion.a
-          href="https://linkedin.com/in/gourabadhikari"
-          target="_blank"
-          rel="noopener noreferrer"
-          variants={{
-            hidden: { opacity: 0, y: 32 },
-            visible: {
-              opacity: 1,
-              y: 0,
-              transition: { duration: 0.5, ease: "easeOut" },
-            },
-          }}
-          className="text-zinc-300 hover:text-indigo-400 transition-colors text-3xl drop-shadow-lg"
-        >
-          <FaLinkedin />
-        </motion.a>
-        <motion.a
-          href="https://twitter.com/gourab_codes"
-          target="_blank"
-          rel="noopener noreferrer"
-          variants={{
-            hidden: { opacity: 0, y: 32 },
-            visible: {
-              opacity: 1,
-              y: 0,
-              transition: { duration: 0.5, ease: "easeOut" },
-            },
-          }}
-          className="text-zinc-300 hover:text-indigo-400 transition-colors text-3xl drop-shadow-lg"
-        >
-          <FaTwitter />
-        </motion.a>
-        <motion.button
-          onClick={handleCopy}
-          variants={{
-            hidden: { opacity: 0, y: 32 },
-            visible: {
-              opacity: 1,
-              y: 0,
-              transition: { duration: 0.5, ease: "easeOut" },
-            },
-          }}
-          className="text-zinc-300 hover:text-indigo-400 transition-colors text-3xl focus:outline-none drop-shadow-lg"
-          title="Copy email"
-        >
-          <FaEnvelope />
-        </motion.button>
-      </motion.div>
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={copied ? { opacity: 1, y: -8 } : { opacity: 0, y: 0 }}
-        transition={{ duration: 0.4 }}
-        className="relative z-10 text-sm text-indigo-300 h-5 font-medium"
-      >
-        {copied ? "Email copied!" : ""}
-      </motion.span>
+          Clickkkk
+        </a>
+        <div className="flex gap-6 mt-2">
+          <a
+            href="https://github.com/GourabAdhikari"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-zinc-300 hover:text-indigo-400 transition-colors text-2xl drop-shadow-lg"
+            title="GitHub"
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="https://linkedin.com/in/gourabadhikari"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-zinc-300 hover:text-indigo-400 transition-colors text-2xl drop-shadow-lg"
+            title="LinkedIn"
+          >
+            <FaLinkedin />
+          </a>
+        </div>
+      </div>
       {/* Section divider for separation */}
       <div className="absolute left-1/2 -translate-x-1/2 bottom-0 w-[60vw] h-1 bg-gradient-to-r from-transparent via-indigo-600/40 to-transparent blur-sm opacity-70 rounded-full" />
     </section>

@@ -27,7 +27,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative py-40 w-full flex flex-col items-center bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950 overflow-hidden"
+      className="relative py-32 w-full flex flex-col items-center bg-black overflow-hidden"
     >
       {/* Section background overlays */}
       <div className="absolute inset-0 pointer-events-none z-0">
@@ -39,10 +39,10 @@ export default function Skills() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.5 }}
-        className="relative z-10 text-4xl md:text-5xl font-extrabold mb-16 bg-gradient-to-r from-zinc-100 via-zinc-400 to-zinc-100 bg-clip-text text-transparent text-center tracking-tight drop-shadow-xl"
+        className="relative z-10 text-4xl md:text-5xl font-extrabold mb-14 bg-gradient-to-r from-zinc-100 via-zinc-400 to-zinc-100 bg-clip-text text-transparent text-center tracking-tight drop-shadow-xl"
         style={{ letterSpacing: "-0.01em", lineHeight: 1.1 }}
       >
-        Skills
+        My Toolbox
       </motion.h2>
       <motion.div
         className="relative z-10 w-full max-w-4xl mx-auto grid grid-cols-3 sm:grid-cols-5 gap-12 px-6"
@@ -88,6 +88,14 @@ export default function Skills() {
           </motion.div>
         ))}
       </motion.div>
+      <a
+        href="/resume.pdf"
+        download
+        className="relative z-10 mt-12 inline-block px-7 py-2.5 rounded-lg bg-blue-600 text-white font-semibold shadow-lg shadow-blue-900/30 transition-all border border-blue-700 focus:outline-none hover:bg-blue-700 hover:scale-105 hover:shadow-blue-500/40"
+        style={{ letterSpacing: "0.01em" }}
+      >
+        Download Resume
+      </a>
       {/* Section divider for separation */}
       <div className="absolute left-1/2 -translate-x-1/2 bottom-0 w-[60vw] h-1 bg-gradient-to-r from-transparent via-indigo-600/40 to-transparent blur-sm opacity-70 rounded-full" />
     </section>
